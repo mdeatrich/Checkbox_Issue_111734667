@@ -20,36 +20,64 @@
             android:id="@+id/tv_report_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
             android:text="@{DateUtils.formatDateStringMedium(report.reportDate)}"
             tools:text="January 4, 2018"/>
 
-        <android.support.v7.widget.AppCompatCheckBox
-            android:id="@+id/cb_boolean_1"
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/tv_info"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:checked="@={report.boolean1}"
-            android:text="Boolean 1"/>
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:text="By default the first two should be checked. If I leave the 3rd alone and just check and uncheck the first 2, swiping to next page to check each time, it does not seem to get screwed up"
+            tools:text="By default the first two should be checked." />
 
         <android.support.v7.widget.AppCompatCheckBox
+            android:id="@+id/cb_boolean_1"
+            android:button="@drawable/checkbox_selector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:checked="@={report.boolean1}"
+            android:text="Boolean 1 - selector added to button attribute of regular checkbox" />
+
+        <net.deatrich.app.checkbox_issue_111734667.ui.CustomCheckboxWorkaround
             android:id="@+id/cb_boolean_2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
             android:checked="@={report.boolean2}"
-            android:text="Boolean 2"/>
+            android:text="Boolean 2 - using custom checkbox with selector" />
 
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/tv_info2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:text="Tick this regular checkbox with no selector and then swipe to the next page, however, and all the checkboxes start messing up. Weirdly, over time it stops happening."
+            tools:text="Tick this regular checkbox with no selector and then swipe to the next page." />
 
         <android.support.v7.widget.AppCompatCheckBox
             android:id="@+id/cb_boolean_3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
             android:checked="@={report.boolean3}"
-            android:text="Boolean 3" />
+            android:text="Boolean 3 - regular checkbox" />
 
 
 
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:layout_marginStart="@dimen/activity_horizontal_margin">
 
             <android.support.design.widget.TextInputEditText
                 android:id="@+id/tv_string_1"
